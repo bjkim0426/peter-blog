@@ -1,0 +1,156 @@
+{% include "header.html" %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url({{ url_for('static', filename='img/about-bg.jpg') }})">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>My Projects</h1>
+                    <span class="subheading">Check out some of the awesome projects I've worked on!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="project-container">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <style>
+            h3, ul {
+                margin-left: 20px;
+            }
+
+            .spacer {
+                margin-top: 20px;
+            }
+
+            .spacer-project {
+                margin-top: 40px;
+            }
+
+            /* Style for floating the img to the left */
+            .image-left-container {
+                float: left;
+                margin-right: 30px; /* Reduced margin to bring text closer */
+            }
+
+            .image-right-container {
+                float: right;
+                margin-left: 30px;
+            }
+
+            /* Clear floats after the img */
+            .clear {
+                clear: both;
+            }
+
+            </style>
+
+
+            <!-- Snake Game -->
+            <div class="project-card">
+                <div style="height: 50px;"></div> <!-- Spacer -->
+                <img class="image-left-container spacer" src="{{ url_for('static', filename='img/snakegame.jpg') }}"
+                     width="150" height="105" alt="Snake Game">
+                <div class="project-text">
+                    <a href="{{ url_for('snake')}}" class="btn btn-primary" style="float: right;">See Project</a>
+                    <h3>Snake Game</h3>
+                    <p>This classic snake game was built using Python and the Turtle module. It includes basic features
+                        like movement, collision detection, and scoring.</p>
+                    <!-- Button on the left -->
+
+                </div>
+            </div>
+
+            <hr style="border: 1px solid #d3d3d3; margin: 20px 0;"> <!-- Light grey line between projects -->
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div style="height: 50px;"></div> <!-- Spacer -->
+                <img class="image-right-container spacer" src="{{ url_for('static', filename='img/snakegame.jpg') }}"
+                     width="150" height="105" alt="Portfolio Website">
+                <div class="project-text">
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive personal portfolio website built with HTML, CSS, and JavaScript. It showcases my
+                        skills and projects in an attractive layout.</p>
+                    <!-- Button on the right -->
+                    <a href="{{ url_for('snake')}}" class="btn btn-primary" style="float: left;">See Project</a>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid #d3d3d3; margin: 20px 0;"> <!-- Light grey line between projects -->
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <div style="height: 50px;"></div> <!-- Spacer -->
+                <img class="image-left-container spacer" src="{{ url_for('static', filename='img/snakegame.jpg') }}"
+                     width="150" height="105" alt="Snake Game">
+                <div class="project-text">
+                    <h3>Snake Game</h3>
+                    <p>This classic snake game was built using Python and the Turtle module. It includes basic features
+                        like movement, collision detection, and scoring.</p>
+                    <!-- Button on the left -->
+                    <a href="/projects/snake-game" class="btn btn-primary">See Project</a>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid #d3d3d3; margin: 20px 0;"> <!-- Light grey line between projects -->
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <div style="height: 50px;"></div> <!-- Spacer -->
+                <img class="image-right-container spacer" src="{{ url_for('static', filename='img/snakegame.jpg') }}"
+                     width="150" height="105" alt="Portfolio Website">
+                <div class="project-text">
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive personal portfolio website built with HTML, CSS, and JavaScript. It showcases my
+                        skills and projects in an attractive layout.</p>
+                    <!-- Button on the right -->
+                    <a href="{{ url_for('snake')}}" class="btn btn-primary" style="float: right;">See Project</a>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid #d3d3d3; margin: 20px 0;"> <!-- Light grey line between projects -->
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <div style="height: 50px;"></div> <!-- Spacer -->
+                <img class="image-left-container spacer" src="{{ url_for('static', filename='img/snakegame.jpg') }}"
+                     width="150" height="105" alt="Snake Game">
+                <div class="project-text">
+                    <h3>Snake Game</h3>
+                    <p>This classic snake game was built using Python and the Turtle module. It includes basic features
+                        like movement, collision detection, and scoring.</p>
+                    <!-- Button on the left -->
+                    <a href="/projects/snake-game" class="btn btn-primary">See Project</a>
+                </div>
+            </div>
+
+            <hr style="border: 1px solid #d3d3d3; margin: 20px 0;"> <!-- Light grey line between projects -->
+
+            <!-- Project 6 -->
+            <div class="project-card">
+                <div style="height: 50px;"></div> <!-- Spacer -->
+                <img class="image-right-container spacer" src="{{ url_for('static', filename='img/snakegame.jpg') }}"
+                     width="150" height="105" alt="Portfolio Website">
+                <div class="project-text">
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive personal portfolio website built with HTML, CSS, and JavaScript. It showcases my
+                        skills and projects in an attractive layout.</p>
+                    <!-- Button on the right -->
+                    <a href="{{ url_for('snake')}}" class="btn btn-primary" style="float: right;">See Project</a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<hr>
+
+{% include "footer.html" %}
