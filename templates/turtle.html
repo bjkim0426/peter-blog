@@ -1,0 +1,210 @@
+{% include "header.html" %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url({{ url_for('static', filename='img/about-bg.jpg')}})">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Turtle Crossing Game</h1>
+                    <span class="subheading">This is what I do.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <!-- Add custom styles specific to this page -->
+            <style>
+            h3, ul {
+                margin-left: 20px;
+            }
+
+            .spacer {
+                margin-top: 20px;  /* Reduced margin-top */
+            }
+
+            .spacer-h3 {
+                margin-top: 35px;
+            }
+
+            /* Style for the container of both gif and description */
+            .gif-and-description {
+                display: flex;
+                align-items: flex-start;
+                gap: 30px;  /* Space between GIF and text */
+                margin-top: 30px;
+            }
+
+            .gif-container {
+                flex: 1;
+                max-width: 60%;
+                margin-top: 100px;
+            }
+
+            .content {
+                flex: 1;
+                max-width: 45%;
+                padding-left: 20px;  /* Space between GIF and description */
+            }
+
+            .gif-container img {
+                width: 100%;  /* Makes the GIF responsive */
+                height: auto; /* Maintain aspect ratio */
+            }
+
+            </style>
+
+            <!-- GIF and Overview placed side by side -->
+            <div class="gif-and-description">
+                <div class="gif-container">
+                    <img src="{{ url_for('static', filename='img/turtle_crossing.gif') }}"
+                         alt="Turtle Crossing Game GIF">
+                </div>
+
+                <!-- Content for Overview and Description -->
+                <div class="content">
+                    <h2 class="spacer">Overview</h2>
+                    <p style="color: #212529; font-style: italic;">This Turtle Crossing Game project was implemented
+                        using Python and the Turtle module. The game features a player-controlled turtle that moves up
+                        the screen and attempts to avoid moving cars that randomly appear. The goal is to reach the
+                        finish line at the top of the screen, where the level will increase, and the speed of the cars
+                        will increase as well. If the player collides with a car, the game ends. The project includes a
+                        scoring system that tracks the player's level, and the game resets when a collision occurs.</p>
+                </div>
+            </div> <!-- End of gif-and-description -->
+
+            <!-- Explanation of the Code -->
+            <h2 class="spacer-h3">Explanation of the Code</h2>
+            <h3 class="spacer-h3">main.py</h3>
+            <ul class="spacer">
+                <li><strong>Turtle Screen Setup:</strong> The screen is created with specific dimensions of 600x600
+                    pixels and uses the <code>Screen</code> class from the <code>turtle</code> module. The screen
+                    updates every 0.1 seconds using the <code>screen.tracer(0)</code> method.
+                </li>
+                <li><strong>Game Loop:</strong> The main game loop runs continuously, updating the screen and
+                    controlling the movement of the cars and the player. The player can control the turtle using the
+                    'Up' arrow key to move it upwards.
+                </li>
+                <li><strong>Collision Detection:</strong> If a car's distance from the player is less than 20 pixels,
+                    the game ends, and a "Game Over" message is displayed.
+                </li>
+                <li><strong>Leveling Up:</strong> When the player reaches the finish line, their score is incremented,
+                    and the player’s position is reset to the starting position. At the same time, the car speed is
+                    increased to make the game more challenging.
+                </li>
+            </ul>
+
+            <h3 class="spacer">car_manager.py</h3>
+            <ul class="spacer">
+                <li><strong>Car Creation:</strong> The <code>CarManager</code> class is responsible for creating the
+                    cars. It uses a random number generator to decide when a car should appear and sets random positions
+                    for the cars along the Y-axis.
+                </li>
+                <li><strong>Car Movement:</strong> Each car moves towards the left of the screen at a constant speed,
+                    and their movement is controlled by the <code>car_move</code> method.
+                </li>
+                <li><strong>Increasing Car Speed:</strong> As the player progresses, the speed of the cars increases by
+                    a defined amount with each level.
+                </li>
+            </ul>
+
+            <h3 class="spacer">player.py</h3>
+            <ul class="spacer">
+                <li><strong>Player Setup:</strong> The player is represented by a turtle with a starting position at
+                    <code>(0, -280)</code>. The turtle moves upwards when the player presses the 'Up' key.
+                </li>
+                <li><strong>Finish Line Detection:</strong> The player’s goal is to reach the top of the screen, at
+                    which point the <code>is_at_finish</code> method returns <code>True</code>, signaling the player has
+                    reached the finish line.
+                </li>
+                <li><strong>Resetting Player Position:</strong> If the player reaches the finish line, they are moved
+                    back to the starting position.
+                </li>
+            </ul>
+
+            <h3 class="spacer">scoreboard.py</h3>
+            <ul class="spacer">
+                <li><strong>Scoreboard Setup:</strong> The <code>Scoreboard</code> class tracks the player's level,
+                    which is displayed at the top of the screen. The score updates when the player reaches the finish
+                    line.
+                </li>
+                <li><strong>Increasing Score:</strong> The score increases by 1 each time the player reaches the finish
+                    line.
+                </li>
+                <li><strong>Game Over:</strong> When the player collides with a car, the game ends, and the "GAME OVER"
+                    message is displayed at the center of the screen.
+                </li>
+            </ul>
+
+            <h3 class="spacer">data.txt</h3>
+            <ul class="spacer">
+                <li><strong>High Score Storage:</strong> This text file stores the highest score achieved in the game.
+                    It’s read and written by the <code>Scoreboard</code> class to persist the high score between game
+                    sessions.
+                </li>
+            </ul>
+
+            <!-- Gameplay Mechanics -->
+            <h2 class="spacer-h3">Gameplay Mechanics</h2>
+            <ul class="spacer">
+                <li><strong>Game Setup:</strong> The game initializes with a screen size of 600x600, with the player
+                    (turtle) represented by a turtle object and the cars represented by square shapes. The player's goal
+                    is to avoid cars and reach the finish line to level up.
+                </li>
+                <li><strong>User Input:</strong> The player controls the turtle using the 'Up' arrow key. The turtle
+                    moves upwards with each press of the 'Up' key.
+                </li>
+                <li><strong>Car Movement and Speed:</strong> Cars are generated at random Y-positions and move from
+                    right to left. As the player progresses, the speed of the cars increases.
+                </li>
+                <li><strong>Game Over:</strong> The game ends if the turtle collides with a car, and the player is shown
+                    a "GAME OVER" message.
+                </li>
+            </ul>
+
+            <!-- How I Developed the Game -->
+            <h2 class="spacer">How I Developed the Game</h2>
+            <p style="color: #212529; font-style: italic;">I gained hands-on experience with Python through the 100 Days
+                of Code: The Complete Python Pro Bootcamp for 2023. I implemented this Turtle Crossing Game as a
+                practical project to understand object-oriented programming (OOP) concepts. I created classes for the
+                player, cars, and scoreboard, which made the game logic modular and easier to manage.</p>
+
+            <p style="color: #212529; font-style: italic;">This project helped me break down the game into smaller,
+                manageable parts. The Player class interacts with the CarManager to avoid collisions, while the
+                Scoreboard tracks the player’s progress and updates the score. Encapsulation was key, as each class
+                handles its own functionality, such as controlling the player’s movement or adjusting the cars’
+                speed.</p>
+
+            <p style="color: #212529; font-style: italic;">I used the Turtle graphics module to visually represent
+                the player, cars, and game elements. Additionally, I utilized the random module to generate cars at
+                different Y-positions and control their speed as the game progressed, ensuring a dynamic and engaging
+                player experience.</p>
+
+            <!-- Conclusion -->
+            <h2 class="spacer">Conclusion</h2>
+            <p style="color: #212529; font-style: italic;">This Turtle Crossing Game is a fun project that helped me
+                practice core programming concepts in Python, including classes, functions, and handling user input. The
+                game has simple yet engaging mechanics, and the increasing difficulty makes it challenging to play. I
+                used the Turtle module to create an interactive and visual experience, and I enjoyed implementing file
+                handling to track the high score.</p>
+
+            <p class="spacer" style="color: #212529; font-style: italic;">Ready to play? 🐢 Download the code and give it
+                a spin! 🎮 <a href="https://github.com/bjkim0426/turtle_crossing" target="_blank">Click here</a> to make
+                it yours!</p>
+
+
+            <!-- Clear the float so the following content will not overlap the GIF -->
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+{% include "footer.html" %}

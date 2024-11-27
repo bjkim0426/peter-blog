@@ -26,106 +26,112 @@
             }
 
             .spacer {
-                margin-top: 20px;
+                margin-top: 20px;  /* Reduced margin-top */
             }
 
             .spacer-h3 {
                 margin-top: 35px;
             }
 
-            /* Style for floating the gif to the left */
-            .gif-container {
-                float: left;
-                margin-right: 30px; /* Reduced margin to bring text closer */
-            }
-
-            /* Clear floats after the gif */
-            .clear {
-                clear: both;
-            }
-
-            iframe {
-                width: 405px;
-                height: 425px;
+            /* Style for the container of both gif and description */
+            .gif-and-description {
+                display: flex;
+                align-items: flex-start;
+                gap: 30px;  /* Space between GIF and text */
                 margin-top: 30px;
             }
 
-            /* Make sure text content doesn't have unnecessary new lines */
+            .gif-container {
+                flex: 1;
+                max-width: 60%;
+                margin-top: 30px;
+            }
+
             .content {
-                line-height: 1.6; /* Reduce the spacing between lines of text */
-                max-width: 100%; /* Ensure text content stretches across the available width */
+                flex: 1;
+                max-width: 45%;
+                padding-left: 20px;  /* Space between GIF and description */
+            }
+
+            .gif-container img {
+                width: 100%;  /* Makes the GIF responsive */
+                height: auto; /* Maintain aspect ratio */
             }
         </style>
 
         <!-- GIF and Overview placed side by side -->
-        <div class="gif-container">
-            <iframe src="https://giphy.com/embed/feYYNPrHjMHqWzMGEV" width="457" height="480" frameBorder="0" class="giphy-embed" allowFullScreen>
-              <p> Snake game animation showing the snake eating food and growing in size. The game is controlled using the arrow keys.</p>
-            </iframe>
-        </div>
+        <div class="gif-and-description">
+            <div class="gif-container">
+                <img src="{{ url_for('static', filename='img/snakegame.gif') }}" alt="Snake Game GIF">
+            </div>
 
-        <!-- Content for Overview and Explanation -->
-        <div class="content">
-            <h2 class="spacer">Overview</h2>
-            <p style="color: #212529">This Snake Game project was implemented using Python and the Turtle module. The game features a snake that moves around the screen, collects food, and keeps track of the score. The game ends if the snake runs into itself or the boundaries of the screen. The project includes a scoring system and keeps track of the highest score between sessions.</p>
+            <!-- Content for Overview and Description -->
+            <div class="content">
+                <h2 class="spacer">Overview</h2>
+                <p style="color: #212529; font-style: italic;">This Snake Game project was implemented using Python and the Turtle module. The game features a snake that moves around the screen, collects food, and keeps track of the score. The game ends if the snake runs into itself or the boundaries of the screen. The project includes a scoring system and keeps track of the highest score between sessions.</p>
+            </div>
+        </div> <!-- End of gif-and-description -->
 
-            <h2>Explanation of the Code</h2>
-            <h3 class="spacer-h3">main.py</h3>
-            <ul class="spacer">
-                <li><strong>Turtle Screen Setup:</strong> The screen is created with specific dimensions of 600x600 pixels and a black background.</li>
-                <li><strong>Game Loop:</strong> The main game loop runs continuously, updating the screen and controlling the snake's movement. It listens for user inputs (arrow keys) to change the snake's direction.</li>
-                <li><strong>Snake Movement:</strong> The snake moves based on the direction set by the user. It moves segment by segment, with the head of the snake leading the movement.</li>
-                <li><strong>Collision Detection:</strong> The game checks for collisions with food and screen boundaries. When the snake eats food, its body grows, and the score increases. The game resets if the snake hits the boundary or itself.</li>
-                <li><strong>Game Termination:</strong> The game stops if the snake collides with itself, and the score is reset.</li>
-            </ul>
+        <!-- Explanation of the Code -->
+        <h2 class="spacer-h3">Explanation of the Code</h2>
+        <h3 class="spacer-h3">main.py</h3>
+        <ul class="spacer">
+            <li><strong>Turtle Screen Setup:</strong> The screen is created with specific dimensions of 600x600 pixels and a black background.</li>
+            <li><strong>Game Loop:</strong> The main game loop runs continuously, updating the screen and controlling the snake's movement. It listens for user inputs (arrow keys) to change the snake's direction.</li>
+            <li><strong>Snake Movement:</strong> The snake moves based on the direction set by the user. It moves segment by segment, with the head of the snake leading the movement.</li>
+            <li><strong>Collision Detection:</strong> The game checks for collisions with food and screen boundaries. When the snake eats food, its body grows, and the score increases. The game resets if the snake hits the boundary or itself.</li>
+            <li><strong>Game Termination:</strong> The game stops if the snake collides with itself, and the score is reset.</li>
+        </ul>
 
-            <h3 class="spacer">food.py</h3>
-            <ul>
-                <li><strong>Food Creation:</strong> The food is created as a circle (using the Turtle module) and placed at a random position on the screen.</li>
-                <li><strong>Food Color:</strong> The food color is randomized every time the food appears on the screen.</li>
-                <li><strong>Food Refresh:</strong> After the snake eats the food, the food moves to a new random position on the screen.</li>
-            </ul>
+        <h3 class="spacer">food.py</h3>
+        <ul class="spacer">
+            <li><strong>Food Creation:</strong> The food is created as a circle (using the Turtle module) and placed at a random position on the screen.</li>
+            <li><strong>Food Color:</strong> The food color is randomized every time the food appears on the screen.</li>
+            <li><strong>Food Refresh:</strong> After the snake eats the food, the food moves to a new random position on the screen.</li>
+        </ul>
 
-            <h3 class="spacer">scoreboard.py</h3>
-            <ul>
-                <li><strong>Score Tracking:</strong> The score is tracked using the score variable, which increases each time the snake eats food.</li>
-                <li><strong>High Score:</strong> The high score is stored in a file called data.txt. If the current score exceeds the high score, the new score is saved.</li>
-                <li><strong>Score Display:</strong> The score and high score are displayed at the top of the screen in yellow text.</li>
-            </ul>
+        <h3 class="spacer">scoreboard.py</h3>
+        <ul class="spacer">
+            <li><strong>Score Tracking:</strong> The score is tracked using the score variable, which increases each time the snake eats food.</li>
+            <li><strong>High Score:</strong> The high score is stored in a file called data.txt. If the current score exceeds the high score, the new score is saved.</li>
+            <li><strong>Score Display:</strong> The score and high score are displayed at the top of the screen in yellow text.</li>
+        </ul>
 
-            <h3 class="spacer">snake.py</h3>
-            <ul>
-                <li><strong>Snake Creation:</strong> The snake is created as a series of segments, each represented by a Turtle object. The snake starts with 3 segments.</li>
-                <li><strong>Snake Movement:</strong> The snake moves by updating the position of each segment. The head of the snake moves first, and the other segments follow.</li>
-                <li><strong>Snake Extension:</strong> Every time the snake eats food, a new segment is added to its body.</li>
-                <li><strong>Direction Control:</strong> The snake's direction is controlled by the arrow keys (Up, Down, Left, Right). The direction is updated using the setheading method.</li>
-                <li><strong>Collision with Self:</strong> The game checks if the head of the snake collides with any of its segments, ending the game if this happens.</li>
-            </ul>
+        <h3 class="spacer">snake.py</h3>
+        <ul class="spacer">
+            <li><strong>Snake Creation:</strong> The snake is created as a series of segments, each represented by a Turtle object. The snake starts with 3 segments.</li>
+            <li><strong>Snake Movement:</strong> The snake moves by updating the position of each segment. The head of the snake moves first, and the other segments follow.</li>
+            <li><strong>Snake Extension:</strong> Every time the snake eats food, a new segment is added to its body.</li>
+            <li><strong>Direction Control:</strong> The snake's direction is controlled by the arrow keys (Up, Down, Left, Right). The direction is updated using the setheading method.</li>
+            <li><strong>Collision with Self:</strong> The game checks if the head of the snake collides with any of its segments, ending the game if this happens.</li>
+        </ul>
 
-            <h3 class="spacer">data.txt</h3>
-            <ul>
-                <li><strong>High Score Storage:</strong> This text file stores the highest score achieved in the game. It’s read and written by the Scoreboard class to persist the high score between game sessions.</li>
-            </ul>
+        <h3 class="spacer">data.txt</h3>
+        <ul class="spacer">
+            <li><strong>High Score Storage:</strong> This text file stores the highest score achieved in the game. It’s read and written by the Scoreboard class to persist the high score between game sessions.</li>
+        </ul>
 
-            <h2 class="spacer-h3">Gameplay Mechanics</h2>
-            <ul class="spacer">
-                <li><strong>Game Setup:</strong> The game initializes with a screen size of 600x600, with the snake represented by a series of white squares. The food is a colored circle, and the scoreboard is displayed at the top.</li>
-                <li><strong>User Input:</strong> The player controls the snake using the arrow keys. The snake moves in the direction corresponding to the pressed arrow key.</li>
-                <li><strong>Food Consumption:</strong> When the snake's head collides with the food, the food changes location and the snake grows by adding a new segment to its body. The score increases by 1 point.</li>
-                <li><strong>Game Over:</strong> The game ends if the snake collides with the screen border or its own body. The score is reset, but the high score is saved.</li>
-            </ul>
+        <!-- Gameplay Mechanics -->
+        <h2 class="spacer-h3">Gameplay Mechanics</h2>
+        <ul class="spacer">
+            <li><strong>Game Setup:</strong> The game initializes with a screen size of 600x600, with the snake represented by a series of white squares. The food is a colored circle, and the scoreboard is displayed at the top.</li>
+            <li><strong>User Input:</strong> The player controls the snake using the arrow keys. The snake moves in the direction corresponding to the pressed arrow key.</li>
+            <li><strong>Food Consumption:</strong> When the snake's head collides with the food, the food changes location and the snake grows by adding a new segment to its body. The score increases by 1 point.</li>
+            <li><strong>Game Over:</strong> The game ends if the snake collides with the screen border or its own body. The score is reset, but the high score is saved.</li>
+        </ul>
 
-            <h2 class="spacer">How I Developed the Game</h2>
-            <p style="color: #212529">I learned the basics of Python through the 100 Days of Code: The Complete Python Pro Bootcamp for 2023. I implemented this Snake Game as a practical project to understand object-oriented programming (OOP) in Python, event handling, and the Turtle module.</p>
-            <p style="color: #212529">The project helped me learn to break down a problem into smaller, manageable parts. I created the snake, food, and scoreboard as separate classes, making it easier to manage and update the game state.</p>
-            <p style="color: #212529">I incorporated file handling by saving the high score in a text file (data.txt), which helped me understand how to read and write data persistently.</p>
-            <p style="color: #212529">I used the time. sleep method to control the speed of the snake’s movement and to make the game playable at a reasonable pace.</p>
+        <!-- How I Developed the Game -->
+        <h2 class="spacer">How I Developed the Game</h2>
+        <p style="color: #212529; font-style: italic;": >I learned the basics of Python through the 100 Days of Code: The Complete Python Pro Bootcamp for 2023. I implemented this Snake Game as a practical project to understand object-oriented programming (OOP) in Python, event handling, and the Turtle module.</p>
+        <p style="color: #212529; font-style: italic;": >The project helped me learn to break down a problem into smaller, manageable parts. I created the snake, food, and scoreboard as separate classes, making it easier to manage and update the game state.</p>
+        <p style="color: #212529; font-style: italic;": >I incorporated file handling by saving the high score in a text file (data.txt), which helped me understand how to read and write data persistently.</p>
+        <p style="color: #212529; font-style: italic;": >I used the time.sleep method to control the speed of the snake’s movement and to make the game playable at a reasonable pace.</p>
 
-            <h2 class="spacer">Conclusion</h2>
-            <p style="color: #212529">This Snake Game was a great way to apply what I learned in Python. The project reinforced concepts like classes, functions, loops, and conditionals. It also introduced me to working with the Turtle graphics library, which was a fun and visual way to explore programming logic. By breaking down the project into smaller components, I was able to successfully develop the game and understand key programming concepts.</p>
+        <!-- Conclusion -->
+        <h2 class="spacer">Conclusion</h2>
+        <p style="color: #212529; font-style: italic;">This Snake Game was a great way to apply what I learned in Python. The project reinforced concepts like classes, functions, loops, and conditionals. It also introduced me to working with the Turtle graphics library, which was a fun and visual way to explore programming logic. By breaking down the project into smaller components, I was able to successfully develop the game and understand key programming concepts.</p>
 
-            <p class="spacer" style="color: #212529">Ready to wrangle some snakes? 🐍 Download the code and give it a spin! 🎮 <a href="https://github.com/bjkim0426/snake_game" target="_blank">Click here</a> to make it yours!</p>
-
+        <p class="spacer" style="color: #212529; font-style: italic;">Ready to wrangle some snakes? 🐍 Download the code and give it a spin! 🎮 <a href="https://github.com/bjkim0426/snake_game" target="_blank">Click here</a> to make it yours!</p>
 
         <!-- Clear the float so the following content will not overlap the GIF -->
         <div class="clear"></div>

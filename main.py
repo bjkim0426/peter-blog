@@ -179,6 +179,15 @@ def projects():
 @app.route("/snake")
 def snake():
     return render_template("snake.html", current_user=current_user)
+@app.route("/turtle")
+def turtle():
+    return render_template("turtle.html", current_user=current_user)
+
+@app.route("/cookie")
+def cookie():
+    return render_template("cookie.html", current_user=current_user)
+
+
 
 @app.route("/contact", methods=['GET', 'POST'])
 def contact():
@@ -256,5 +265,5 @@ def delete_post(post_id):
     db.session.commit()
     return redirect(url_for('get_all_posts'))
 
-# if __name__ == "__main__":
-#     app.run(host='0.0.0.0', port=5001, debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5001, debug=True)

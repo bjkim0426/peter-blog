@@ -1,0 +1,154 @@
+{% include "header.html" %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url({{ url_for('static', filename='img/about-bg.jpg')}})">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Automated Cookie Clicker</h1>
+                    <span class="subheading">This is what I do.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <!-- Add custom styles specific to this page -->
+            <style>
+            h3, ul {
+                margin-left: 20px;
+            }
+
+            .spacer {
+                margin-top: 20px;
+            }
+
+            .spacer-h3 {
+                margin-top: 35px;
+            }
+
+            /* Style for the container of both gif and description */
+            .gif-and-description {
+                display: flex;
+                align-items: flex-start;
+                gap: 30px;  /* Space between GIF and text */
+                margin-top: 30px;
+            }
+
+            .gif-container {
+                flex: 1;
+                max-width: 60%;
+                margin-top: 100px;
+                text-align: center;
+            }
+
+            .content {
+                flex: 1;
+                max-width: 45%;
+                padding-left: 20px;  /* Space between GIF and description */
+            }
+
+            .gif-container img {
+                width: 100%;  /* Makes the GIF responsive */
+                max-width: 600px
+                height: auto; /* Maintain aspect ratio */
+            }
+
+
+            </style>
+
+            <!-- GIF and Overview placed side by side -->
+            <div class="gif-and-description">
+                <div class="gif-container">
+                    <img src="{{ url_for('static', filename='img/cookie_clicker.gif') }}"
+                         alt="Cookie Clicker Game GIF">
+                </div>
+
+                <!-- Content for Overview and Description -->
+                <div class="content">
+                    <h2 class="spacer">Overview</h2>
+                    <p style="color: #212529; font-style: italic;">The Cookie Clicker Automation project uses Python and
+                        Selenium WebDriver to automate the process of playing the famous browser game, Cookie Clicker.
+                        The script interacts with the game's interface, simulating mouse clicks to collect cookies and
+                        purchase upgrades. The goal is to maximize the number of cookies in the shortest possible time
+                        by automating the clicking and purchasing actions, creating an efficient gaming strategy.</p>
+                </div>
+            </div> <!-- End of gif-and-description -->
+
+            <!-- Explanation of the Code -->
+            <h2 class="spacer-h3">Explanation of the Code</h2>
+            <h3 class="spacer-h3">main.py</h3>
+            <ul class="spacer">
+                <li><strong>WebDriver Setup:</strong> The script uses Selenium to open the Cookie Clicker website,
+                    selecting the English language and loading the main game screen.
+                </li>
+                <li><strong>Game Loop:</strong> The loop runs continuously, clicking the big cookie to generate cookies
+                    and periodically checking if it is time to purchase new upgrades such as cursors, grandmas, and
+                    farms.
+                </li>
+                <li><strong>Upgrade Purchases:</strong> The script calculates the cost of each upgrade and buys them
+                    when the player has enough cookies. It purchases the most cost-effective upgrades in the correct
+                    order to maximize cookie generation.
+                </li>
+                <li><strong>Cookie Generation:</strong> The script simulates mouse clicks on the big cookie to generate
+                    cookies, ensuring the player’s progress continues without manual input.
+                </li>
+            </ul>
+
+            <!-- Gameplay Mechanics -->
+            <h2 class="spacer-h3">Gameplay Mechanics</h2>
+            <ul class="spacer">
+                <li><strong>Game Loop:</strong> The script runs the main game loop, constantly clicking the cookie and
+                    checking if upgrades should be purchased.
+                </li>
+                <li><strong>Upgrade Priority:</strong> The script buys upgrades based on their price and the player's
+                    available cookies. For example, the script purchases the cheapest available upgrade first to
+                    maximize progress.
+                </li>
+                <li><strong>Efficiency:</strong> The automated clicks and purchases improve the player's performance
+                    over time, allowing them to progress without manual input.
+                </li>
+            </ul>
+
+            <!-- How I Developed the Game -->
+            <h2 class="spacer">How I Developed the Game</h2>
+            <p style="color: #212529; font-style: italic;">I built this automated Cookie Clicker script as a project
+                through the 100 Days of Code: The Complete Python Pro Bootcamp for 2023. It was a great opportunity to
+                practice Python and Selenium WebDriver. I learned how to interact with dynamic web pages, locate
+                elements, and simulate user input programmatically. By automating the process of clicking and
+                purchasing, I was able to experiment with strategies to optimize gameplay.</p>
+
+            <p style="color: #212529; font-style: italic;">Additionally, I gained hands-on experience with WebDriver's
+                waiting mechanisms and element interaction, as I used these techniques to control the flow of the
+                game.</p>
+
+            <!-- Conclusion -->
+            <h2 class="spacer">Conclusion</h2>
+            <p style="color: #212529; font-style: italic;">This project helped me enhance my Python and Selenium skills
+                by automating the gameplay of a popular browser game. The process of building the script provided
+                valuable insight into web scraping and automating browser-based interactions. In addition, it was a fun
+                and practical way to apply programming concepts like loops, conditionals, and element selection.</p>
+
+            <p class="spacer" style="color: #212529; font-style: italic;">Ready to automate your Cookie Clicker game? 🍪
+                Download the code and give it a try! 🎮 <a
+                        href="https://github.com/bjkim0426/automated_cookie_clicker_game.py" target="_blank">Click
+                    here</a> to get started! Or, if you feel like earning cookies the old-fashioned way, hop over to the
+                game and click away at <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank">this link</a>!
+            </p>
+
+
+            <!-- Clear the float so the following content will not overlap the GIF -->
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+{% include "footer.html" %}
