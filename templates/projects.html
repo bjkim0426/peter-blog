@@ -49,9 +49,28 @@
             }
 
 
+
+
+
             </style>
 
+            <div class="project-card">
+                <div style="height: 50px;"></div> <!-- Spacer -->
+                <img class="image-right-container spacer"
+                     src="{{ url_for('static', filename='img/toogoodtogo.gif') }}"
+                     width="150" height="105" alt="Portfolio Website">
+                <div class="project-text">
+                    <h3>TooGoodToGo Bot 🤖</h3>
+                    <p>The TooGoodToGo bot automates the reservation process for food items listed on the
+                        TooGoodToGo app. It monitors new listings and quickly reserves meals, increasing the chances of
+                        successfully securing great deals on surplus food.</p>
+                    <!-- Button on the right -->
+                    <a href="{{ url_for('toogoodtogo')}}" class="btn btn-primary" style="float: left;">See Project</a>
+                </div>
+            </div>
+            <br><br>
 
+            <hr style="border: 1px solid #d3d3d3; margin: 20px 0;"> <!-- Light grey line between projects -->
             <!-- Snake Game -->
             <div class="project-card">
                 <div style="height: 50px;"></div> <!-- Spacer -->
@@ -97,8 +116,9 @@
                 <div class="project-text">
                     <a href="{{ url_for('cookie')}}" class="btn btn-primary" style="float: right;">See Project</a>
                     <h3>Cookie Clicker</h3>
-                    <p>This classic snake game was built using Python and the Turtle module. It includes basic features
-                        like movement, collision detection, and scoring.</p>
+                    <p>The Cookie Clicker automation script uses Python and Selenium to automate gameplay by simulating
+                        mouse clicks to collect cookies and purchase upgrades. The goal is to maximize cookie production
+                        through efficient, automated actions.</p>
                     <!-- Button on the left -->
 
                 </div>
@@ -106,19 +126,19 @@
 
             <hr style="border: 1px solid #d3d3d3; margin: 20px 0;"> <!-- Light grey line between projects -->
 
-            <!-- Project 2 -->
+            <!-- 2good2go -->
             <div class="project-card">
                 <div style="height: 50px;"></div> <!-- Spacer -->
                 <img class="image-right-container spacer"
-                     src="{{ url_for('static', filename='img/turtle_crossing.gif') }}"
+                     src="{{ url_for('static', filename='img/toogoodtogo.gif') }}"
                      width="150" height="105" alt="Portfolio Website">
                 <div class="project-text">
-                    <h3>Turtle Crossing Game</h3>
+                    <h3>TooGoodToGo Bot 🤖</h3>
                     <p>The Turtle Crossing Game is a Python project built using the Turtle graphics library, where the
                         player controls a turtle to cross busy roads while avoiding oncoming cars. The game increases in
                         difficulty as the player advances through levels.</p>
                     <!-- Button on the right -->
-                    <a href="{{ url_for('turtle')}}" class="btn btn-primary" style="float: left;">See Project</a>
+                    <a href="{{ url_for('toogoodtogo')}}" class="btn btn-primary" style="float: left;">See Project</a>
                 </div>
             </div>
             <br><br>

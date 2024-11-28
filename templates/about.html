@@ -1,31 +1,73 @@
 {% include "header.html" %}
 
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url({{ url_for('static', filename='img/about-bg.jpg')}})">
+<!-- Page Header -->
+<header class="masthead" style="background-image: url({{ url_for('static', filename='img/about-bg.jpg')}})">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>About Me</h1>
-            <span class="subheading">This is what I do.</span>
-          </div>
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>About Me</h1>
+                    <span class="subheading">From Curiosity to Code: My Journey in Software Development.</span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </header>
+</header>
 
-  <!-- Main Content -->
-  <div class="container">
+<style>
+    .about-container {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .about-image img {
+        width: 300px; /* Adjust the size of the image */
+        height: auto;
+        border-radius: 0%;
+        margin-right: 50px; /* Space between image and text */
+    }
+
+    .about-text {
+        flex-grow: 1;
+    }
+
+    .first-paragraph {
+        font-size: 16px;
+        line-height: 1.5;
+        font-style: italic; /* Italicize the first paragraph */
+    }
+</style>
+
+<!-- Main Content -->
+<div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio, adipisci quas excepturi maxime quae totam ducimus consectetur?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius praesentium recusandae illo eaque architecto error, repellendus iusto reprehenderit, doloribus, minus sunt. Numquam at quae voluptatum in officia voluptas voluptatibus, minus!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consequuntur magnam, excepturi aliquid ex itaque esse est vero natus quae optio aperiam soluta voluptatibus corporis atque iste neque sit tempora!</p>
-      </div>
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <!-- About Section with Image and Text -->
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="{{ url_for('static', filename='img/peterpicture.png') }}" alt="About Me" />
+                </div>
+                <div class="about-text">
+                    <p class="first-paragraph">I am a Computer Science student at Fulton Schools of Engineering at Arizona State University. A motivated
+                        individual with a solid grasp of object-oriented programming, I am dedicated to ongoing growth within
+                        the Software Development Life Cycle. I have a proven ability to lead and contribute to intricate
+                        projects, continually advancing my skills through proactive learning and teamwork.</p>
+                </div>
+            </div>
+            <p>My interest in coding was sparked by my brother-in-law, a software engineer, and my wife, who holds a
+                master's degree in data science. The first programming language I learned was Python, through the
+                freeCodeCamp.org YouTube channel. After grasping the basics of Python, I enrolled in the 100 Days of
+                Code bootcamp taught by Dr. Angela Yu on Udemy, where I deepened my knowledge of Python. Completing the
+                course, I realized how much I enjoyed coding, especially the ability to bring my software ideas to life.
+                This passion led me to pursue a career in computer science, and I’m excited to continue developing my
+                skills and contributing to innovative projects.</p>
+
+        </div>
     </div>
-  </div>
+</div>
 
-  <hr>
+<hr>
 
-  {% include "footer.html" %}
+{% include "footer.html" %}

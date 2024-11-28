@@ -1,0 +1,182 @@
+{% include "header.html" %}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url({{ url_for('static', filename='img/about-bg.jpg')}})">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>2Good2Go Bot 🤖</h1>
+                    <span class="subheading">Snagging like a pro – because food waste is so last season.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <!-- Add custom styles specific to this page -->
+            <style>
+                h3, ul {
+                    margin-left: 20px;
+                }
+
+                .spacer {
+                    margin-top: 20px;
+                }
+
+                .spacer-h3 {
+                    margin-top: 35px;
+                }
+
+                /* Style for the container of both gifs and description */
+                .gif-and-description {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: 30px;  /* Space between GIF and text */
+                    margin-top: 30px;
+                }
+
+                /* Adjust the layout so that gifs are stacked vertically and content is on the right */
+                .gif-container {
+                    display: flex;
+                    flex-direction: column;  /* Stack gifs vertically */
+                    flex: 1;
+                    max-width: 60%;
+                    margin-top: 20px;
+                    text-align: center;
+                }
+
+                .content {
+                    flex: 1;
+                    max-width: 45%;
+                    padding-left: 20px;  /* Space between GIFs and description */
+                }
+
+                .gif-container img {
+                    width: 100%;  /* Makes the GIF responsive */
+                    max-width: 600px;
+                    height: auto; /* Maintain aspect ratio */
+                    margin-bottom: 20px; /* Space between the two GIFs */
+                }
+
+                /* Adjust the height of the iOS GIF */
+                .gif-container img:first-child {
+                    max-height: 400px;  /* Set a specific height for the iOS GIF */
+                    object-fit: contain;  /* Ensure the aspect ratio is maintained */
+                }
+
+
+
+
+            </style>
+
+            <!-- GIF and Overview placed side by side -->
+            <div class="gif-and-description">
+                <!-- GIFs stacked vertically -->
+                <div class="gif-container">
+                    <img src="{{ url_for('static', filename='img/toogoodtogo.gif') }}"
+                         alt="Cookie Clicker Game GIF">
+                    <img src="{{ url_for('static', filename='img/toogoodtogo_console.gif') }}"
+                         alt="Cookie Clicker Game GIF">
+                </div>
+
+                <!-- Content for Overview and Description -->
+                <div class="content">
+                    <h2 class="spacer">Overview</h2>
+                    <p style="color: #212529; font-style: italic;">The 2Good2Go Bot automates the process of reserving
+                        food deals through the TooGoodToGo app. Using Python, Appium, and Selenium WebDriver, the script
+                        interacts with the app's user interface to quickly identify when items become available,
+                        automatically attempts to reserve them, and handles the checkout process. The goal is to reduce
+                        the time it takes to secure high-demand items, increasing the chances of successfully completing
+                        a reservation.</p>
+                </div>
+            </div> <!-- End of gif-and-description -->
+
+            <!-- Explanation of the Code -->
+            <h2 class="spacer-h3">Explanation of the Code</h2>
+            <h3 class="spacer-h3">main.py</h3>
+            <ul class="spacer">
+                <li><strong>WebDriver Setup:</strong> The script uses Appium to connect to an iOS device through the
+                    specified device UDID. It then initializes the Appium driver with the appropriate capabilities to
+                    interact with the TooGoodToGo app.
+                </li>
+                <li><strong>Item Availability Check:</strong> The main function continuously checks for the availability
+                    of items by monitoring the screen for the "Reserve" button and pop-ups that indicate an item has
+                    sold out. Once an item is available, it attempts to click the "Reserve" button.
+                </li>
+                <li><strong>Popup Handling:</strong> If a pop-up appears indicating that the item is unavailable, the
+                    bot detects it and closes the pop-up before continuing the search.
+                </li>
+                <li><strong>Checkout Process:</strong> After successfully reserving an item, the bot proceeds through
+                    the checkout process, clicking "Got it" to acknowledge the prompt and automatically increasing the
+                    quantity of items. Finally, the bot triggers the "Buy with Apple Pay" button, leaving the final step
+                    for manual confirmation.
+                </li>
+            </ul>
+
+            <!-- Gameplay Mechanics -->
+            <h2 class="spacer-h3">Script Mechanics</h2>
+            <ul class="spacer">
+                <li><strong>Item Reservation: </strong> The bot continuously checks for item availability, simulating
+                    clicks on the "Reserve" button once an item becomes available.
+                </li>
+                <li><strong>Popup Handling:</strong> If an item is not available and a "Sold Out" pop-up appears, the
+                    bot closes the pop-up and retries until an item is successfully reserved.
+                </li>
+                <li><strong>Checkout Process:</strong> The script automates the checkout by interacting with the
+                    interface, including increasing item quantities and triggering the payment process. The final
+                    confirmation requires manual user input.
+                </li>
+                <li><strong>Efficiency:</strong> The automated process speeds up the user’s ability to secure
+                    reservations for high-demand food items, increasing the chances of success by automating repetitive
+                    tasks.
+                </li>
+            </ul>
+
+            <!-- How I Developed the Game -->
+            <h2 class="spacer">Why I Developed the Bot</h2>
+            <p style="color: #212529; font-style: italic;">The TooGoodToGo app is a platform where businesses list
+                unsold food items that are made that day before closing, aiming to reduce food waste. My sister-in-law
+                was disappointed by the availability of a popular restaurant's offerings, which were often listed at a
+                good value but sold out very quickly. She mentioned that she suspected others were
+                using a bot to reserve the items, as they were consistently sold out within minutes of being listed.</p>
+
+            <p style="color: #212529; font-style: italic;">Hearing this sparked my curiosity, and I decided to develop a
+                customized bot specifically for her. After creating the bot, her success rate of reserving the
+                items went from about 5% to an impressive 99.99%. It was exciting to see how automation could improve
+                her chances and reserve the items she wanted, all while reducing the time and effort required
+                to secure the best deals!</p>
+            <!-- Conclusion -->
+            <h2 class="spacer">Conclusion</h2>
+            <p style="color: #212529; font-style: italic;">This project not only sharpened my skills in Python,
+                automation, and web scraping, but it also showed me the practical impact of technology in solving
+                real-world problems. The bot I created for my sister-in-law drastically improved her chances of
+                successfully reserving a popular food item on the TooGoodToGo app, transforming her experience from
+                frustration to success. This project reinforced the importance of efficiency and automation in today’s
+                fast-paced digital world.</p>
+
+            <p style="color: #212529; font-style: italic;">Through this experience, I gained a deeper understanding of
+                how automation tools like Selenium and Appium can be used to simplify complex tasks, and I’m excited to
+                apply this knowledge to future challenges. Whether it’s improving productivity, creating user-friendly
+                solutions, or exploring new opportunities, this project reinforced my passion for problem-solving
+                through coding.</p>
+
+            <p class="spacer" style="color: #212529; font-style: italic;">Ready to automate your Cookie Clicker game?
+                Download the code and give it a try! 🤖 <a
+                        href="https://github.com/bjkim0426/2Good2Go_Bot" target="_blank">Click
+                    here</a> to get started!
+
+            <!-- Clear the float so the following content will not overlap the GIF -->
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+{% include "footer.html" %}

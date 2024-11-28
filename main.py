@@ -187,6 +187,17 @@ def turtle():
 def cookie():
     return render_template("cookie.html", current_user=current_user)
 
+@app.route("/certifications")
+def certifications():
+    return render_template("certifications.html", current_user=current_user)
+
+@app.route("/password")
+def password():
+    return render_template("password.html", current_user=current_user)
+
+@app.route("/toogoodtogo")
+def toogoodtogo():
+    return render_template("toogoodtogo.html", current_user=current_user)
 
 
 @app.route("/contact", methods=['GET', 'POST'])
