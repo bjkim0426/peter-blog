@@ -7,8 +7,8 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="page-heading">
-                    <h1>Automated Cookie Clicker</h1>
-                    <span class="subheading">This is what I do.</span>
+                    <h1>Learning Never Stops</h1>
+                    <span class="subheading">These credentials are a reflection of my commitment to mastering software development.</span>
                 </div>
             </div>
         </div>
@@ -18,133 +18,259 @@
 <!-- Main Content -->
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="col-12">
             <!-- Add custom styles specific to this page -->
             <style>
-            h3, ul {
-                margin-left: 20px;
-            }
+                h3, ul {
+                    margin-left: 20px;
+                }
 
-            .spacer {
-                margin-top: 20px;
-            }
+                .spacer {
+                    margin-top: 20px;
+                }
 
-            .spacer-h3 {
-                margin-top: 35px;
-            }
+                .spacer-h3 {
+                    margin-top: 35px;
+                }
 
-            /* Style for the container of both gif and description */
-            .gif-and-description {
-                display: flex;
-                align-items: flex-start;
-                gap: 30px;  /* Space between GIF and text */
-                margin-top: 30px;
-            }
+                /* Style for the container of both certificate image and description */
+                .gif-and-description {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 40px;  /* Space between certificate image and text */
+                    margin-top: 30px;
+                    flex-wrap: wrap;  /* Allow wrapping on smaller screens */
+                }
 
-            .gif-container {
-                flex: 1;
-                max-width: 60%;
-                margin-top: 100px;
-                text-align: center;
-            }
+                .gif-container {
+                    flex: 1;
+                    max-width: 100%;  /* Allow full width for the image */
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
 
-            .content {
-                flex: 1;
-                max-width: 45%;
-                padding-left: 20px;  /* Space between GIF and description */
-            }
+                .content {
+                    flex: 1;
+                    max-width: 100%;  /* Allow full width for the description */
+                    padding-left: 20px;  /* Space between certificate and description */
+                    margin-bottom: 20px;
+                }
 
-            .gif-container img {
-                width: 100%;  /* Makes the GIF responsive */
-                max-width: 600px
-                height: auto; /* Maintain aspect ratio */
-            }
+                .gif-container img {
+                    width: 100%;  /* Make the certificate responsive */
+                    height: auto; /* Maintain aspect ratio */
+                    max-width: 1500px; /* Increase max-width for a larger certificate */
+                }
+
+                /* Styling for the carousel and arrows */
+                .carousel-inner img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                /* Position the carousel arrows at the very edge of the screen */
+                .carousel-control-prev, .carousel-control-next {
+                    position: fixed;  /* Fix the position relative to the screen */
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: 5;
+                    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for arrows */
+                    width: 50px; /* Width for the rectangle */
+                    height: 200px; /* Height for the vertical rectangle */
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .carousel-control-prev {
+                    left: 0;  /* Align to the left of the screen */
+                }
+
+                .carousel-control-next {
+                    right: 0;  /* Align to the right of the screen */
+                }
+
+                /* Adjust the icon size and background color */
+                .carousel-control-prev-icon, .carousel-control-next-icon {
+                    background-color: transparent;  /* Ensure the background is transparent */
+                    width: 30px;  /* Width of the arrow icon */
+                    height: 30px;  /* Height of the arrow icon */
+                    border-radius: 0%; /* Remove roundness */
+                    background-image: none;  /* Remove default background image */
+                }
+
+                /* Add the Font Awesome arrows for previous and next buttons */
+                .carousel-control-prev-icon::before {
+                    content: "\f104";  /* Left arrow */
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900; /* Ensure it's a solid arrow */
+                    font-size: 30px;  /* Size of the arrow */
+                    color: white;
+                }
+
+                .carousel-control-next-icon::before {
+                    content: "\f105";  /* Right arrow */
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900; /* Ensure it's a solid arrow */
+                    font-size: 30px;  /* Size of the arrow */
+                    color: white;
+                }
+                strong {
+                    color: #212529; /* Standard dark color for text */
+                }
+
+
 
 
             </style>
 
-            <!-- GIF and Overview placed side by side -->
-            <div class="gif-and-description">
-                <div class="gif-container">
-                    <img src="{{ url_for('static', filename='img/cookie_clicker.gif') }}"
-                         alt="Cookie Clicker Game GIF">
+            <!-- Carousel Section -->
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+
+                    <!-- First carousel item (Certificate and Overview side by side) -->
+                    <div class="carousel-item active">
+                        <div class="gif-and-description">
+                            <!-- Certificate Image -->
+                            <div class="gif-container">
+                                <img src="{{ url_for('static', filename='img/100daysofcode.jpg')}}"
+                                     alt="Udemy Certificate"/>
+                            </div>
+
+                            <!-- Description Content -->
+                            <div class="content">
+                                <h2 class="spacer">Main Learnings</h2>
+                                <br>
+                                <ul>
+
+                                    <li><strong>Python Scripting & Automation</strong>: Automate repetitive tasks and
+                                        write efficient Python scripts.
+                                    </li>
+                                    <li><strong>Python Game Development</strong>: Create interactive games using Python.
+                                    </li>
+                                    <li><strong>Web Scraping</strong>: Extract data from websites using <strong>Beautiful
+                                        Soup</strong> and <strong>Selenium WebDriver</strong>.
+                                    </li>
+                                    <li><strong>Data Science Tools</strong>: Utilize powerful Python libraries like
+                                        <strong>Pandas</strong>, <strong>NumPy</strong>, <strong>Matplotlib</strong>,
+                                        <strong>Plotly</strong>, <strong>Scikit-learn</strong>, and
+                                        <strong>Seaborn</strong> to analyze and visualize data.
+                                    </li>
+                                    <li><strong>Python GUI Development</strong>: Build desktop applications with
+                                        <strong>Tkinter</strong>.
+                                    </li>
+                                    <li><strong>Front-End Web Development</strong>: Design and build websites using
+                                        <strong>HTML5</strong>, <strong>CSS3</strong>, and <strong>Bootstrap 4</strong>.
+                                    </li>
+                                    <li><strong>Git & GitHub</strong>: Track code changes, collaborate, and version
+                                        control using <strong>Git</strong> and <strong>GitHub</strong>.
+                                    </li>
+                                    <li><strong>Backend Web Development</strong>: Develop web applications with <strong>Flask</strong>,
+                                        <strong>REST APIs</strong>, and databases like <strong>SQL</strong>, <strong>SQLite</strong>,
+                                        and <strong>PostgreSQL</strong>.
+                                    </li>
+                                    <li><strong>Web Design & Deployment</strong>: Learn the basics of web design and
+                                        deploy applications with <strong>GitHub
+                                            Pages</strong>, <strong>Heroku</strong>, and <strong>Gunicorn</strong>.
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </div> <!-- End of gif-and-description -->
+                    </div> <!-- End of first carousel item -->
+
+                    <!-- Second carousel item (Example of another certificate and description) -->
+                    <div class="carousel-item">
+                        <div class="gif-and-description">
+                            <!-- Certificate Image -->
+                            <div class="gif-container">
+                                <img src="{{ url_for('static', filename='img/java_certificate.jpg')}}"
+                                     alt="Another Certificate"/>
+                            </div>
+
+                            <!-- Description Content -->
+                            <div class="content">
+                                <h2 class="spacer">Main Learnings</h2>
+                                <ul>
+                                    <li><strong>Java Fundamentals</strong>: Master the core syntax, variables, and
+                                        control structures of Java programming.
+                                    </li>
+                                    <li><strong>Object-Oriented Programming (OOP)</strong>: Learn how to design and
+                                        implement applications using the principles of OOP, including classes, objects,
+                                        inheritance, and polymorphism.
+                                    </li>
+                                    <li><strong>Java Collections Framework</strong>: Understand and use data structures
+                                        like lists, sets, maps, and queues.
+                                    </li>
+                                    <li><strong>Java Streams & Lambda Expressions</strong>: Use streams and lambda
+                                        expressions for functional programming in Java.
+                                    </li>
+                                    <li><strong>Web Development with Java</strong>: Build web applications with Java,
+                                        focusing on the Spring Framework and building RESTful APIs.
+                                    </li>
+                                    <li><strong>Databases</strong>: Learn how to connect Java applications to databases,
+                                        and perform CRUD operations using JDBC, Hibernate, and JPA.
+                                    </li>
+                                    <li><strong>Version Control</strong>: Use Git for version control and collaborate on
+                                        projects via GitHub.
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div> <!-- End of gif-and-description -->
+                    </div> <!-- End of second carousel item -->
+
+                    <!-- Third carousel item (Example of another certificate and description) -->
+                    <div class="carousel-item">
+                        <div class="gif-and-description">
+                            <!-- Certificate Image -->
+                            <div class="gif-container">
+                                <img src="{{ url_for('static', filename='img/dean_fall_2023.png')}}"
+                                     alt="Another Certificate"/>
+                            </div>
+
+                            <!-- Description Content -->
+                            <div class="content">
+                                <h2 class="spacer">Main Learnings</h2>
+                                <ul>
+                                    <li><strong>CSE 205: Object-Oriented Program & Data</strong></li>
+                                    <li><strong>CSE 205: Object-Oriented Program & Data (Lab)</strong></li>
+                                    <li><strong>MAT 266: Calculus for Engineers II</strong></li>
+                                    <li><strong>FSE 100: Introduction to Engineering</strong></li>
+                                    <li><strong>PUP 200: Cities in Cinema</strong></li>
+                                    <li><strong>SES 141: Energy in Everyday Life</strong></li>
+                                </ul>
+
+                                <p><strong>Academic Standing:</strong></p>
+                                <ul>
+                                    <li><strong>Term GPA</strong>: 4.04</li>
+                                    <li><strong>Cumulative GPA</strong>: 4.00</li>
+                                </ul>
+
+
+                            </div>
+                        </div> <!-- End of gif-and-description -->
+                    </div> <!-- End of second carousel item -->
+
                 </div>
 
-                <!-- Content for Overview and Description -->
-                <div class="content">
-                    <h2 class="spacer">Overview</h2>
-                    <p style="color: #212529; font-style: italic;">The Cookie Clicker Automation project uses Python and
-                        Selenium WebDriver to automate the process of playing the famous browser game, Cookie Clicker.
-                        The script interacts with the game's interface, simulating mouse clicks to collect cookies and
-                        purchase upgrades. The goal is to maximize the number of cookies in the shortest possible time
-                        by automating the clicking and purchasing actions, creating an efficient gaming strategy.</p>
-                </div>
-            </div> <!-- End of gif-and-description -->
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden"></span>
+                </button>
+            </div> <!-- End of carousel section -->
 
-            <!-- Explanation of the Code -->
-            <h2 class="spacer-h3">Explanation of the Code</h2>
-            <h3 class="spacer-h3">main.py</h3>
-            <ul class="spacer">
-                <li><strong>WebDriver Setup:</strong> The script uses Selenium to open the Cookie Clicker website,
-                    selecting the English language and loading the main game screen.
-                </li>
-                <li><strong>Game Loop:</strong> The loop runs continuously, clicking the big cookie to generate cookies
-                    and periodically checking if it is time to purchase new upgrades such as cursors, grandmas, and
-                    farms.
-                </li>
-                <li><strong>Upgrade Purchases:</strong> The script calculates the cost of each upgrade and buys them
-                    when the player has enough cookies. It purchases the most cost-effective upgrades in the correct
-                    order to maximize cookie generation.
-                </li>
-                <li><strong>Cookie Generation:</strong> The script simulates mouse clicks on the big cookie to generate
-                    cookies, ensuring the player’s progress continues without manual input.
-                </li>
-            </ul>
-
-            <!-- Gameplay Mechanics -->
-            <h2 class="spacer-h3">Gameplay Mechanics</h2>
-            <ul class="spacer">
-                <li><strong>Game Loop:</strong> The script runs the main game loop, constantly clicking the cookie and
-                    checking if upgrades should be purchased.
-                </li>
-                <li><strong>Upgrade Priority:</strong> The script buys upgrades based on their price and the player's
-                    available cookies. For example, the script purchases the cheapest available upgrade first to
-                    maximize progress.
-                </li>
-                <li><strong>Efficiency:</strong> The automated clicks and purchases improve the player's performance
-                    over time, allowing them to progress without manual input.
-                </li>
-            </ul>
-
-            <!-- How I Developed the Game -->
-            <h2 class="spacer">How I Developed the Game</h2>
-            <p style="color: #212529; font-style: italic;">I built this automated Cookie Clicker script as a project
-                through the 100 Days of Code: The Complete Python Pro Bootcamp for 2023. It was a great opportunity to
-                practice Python and Selenium WebDriver. I learned how to interact with dynamic web pages, locate
-                elements, and simulate user input programmatically. By automating the process of clicking and
-                purchasing, I was able to experiment with strategies to optimize gameplay.</p>
-
-            <p style="color: #212529; font-style: italic;">Additionally, I gained hands-on experience with WebDriver's
-                waiting mechanisms and element interaction, as I used these techniques to control the flow of the
-                game.</p>
-
-            <!-- Conclusion -->
-            <h2 class="spacer">Conclusion</h2>
-            <p style="color: #212529; font-style: italic;">This project helped me enhance my Python and Selenium skills
-                by automating the gameplay of a popular browser game. The process of building the script provided
-                valuable insight into web scraping and automating browser-based interactions. In addition, it was a fun
-                and practical way to apply programming concepts like loops, conditionals, and element selection.</p>
-
-            <p class="spacer" style="color: #212529; font-style: italic;">Ready to automate your Cookie Clicker game? 🍪
-                Download the code and give it a try! 🎮 <a
-                        href="https://github.com/bjkim0426/automated_cookie_clicker_game.py" target="_blank">Click
-                    here</a> to get started! Or, if you feel like earning cookies the old-fashioned way, hop over to the
-                game and click away at <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank">this link</a>!
-            </p>
-
-
-            <!-- Clear the float so the following content will not overlap the GIF -->
-            <div class="clear"></div>
         </div>
     </div>
 </div>

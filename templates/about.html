@@ -25,7 +25,7 @@
     .about-image img {
         width: 300px; /* Adjust the size of the image */
         height: auto;
-        border-radius: 0%;
+        border-radius: 10%;
         margin-right: 50px; /* Space between image and text */
     }
 
@@ -37,7 +37,61 @@
         font-size: 16px;
         line-height: 1.5;
         font-style: italic; /* Italicize the first paragraph */
+        color: #212529; /* Match text color */
     }
+
+    .section {
+        margin-bottom: 30px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+        color: #212529;
+        border-bottom: 2px solid #6c757d; /* Slightly dark border for distinction */
+        padding-bottom: 5px;
+    }
+
+    .section p {
+        font-size: 16px;
+        color: #495057; /* Slightly lighter text color */
+    }
+
+    .subheading {
+        font-style: italic;
+        color: #6c757d; /* Match the subheading style */
+    }
+
+    .contact-info {
+        margin-bottom: 20px;
+    }
+
+    .education, .projects, .certifications, .work-experience, .languages {
+        list-style-type: none;
+        padding-left: 0;
+        font-size: 16px;
+        color: #495057;
+    }
+
+    .list-item {
+        margin-bottom: 10px;
+    }
+
+    .list-item strong {
+        color: #212529;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+
+
+
 </style>
 
 <!-- Main Content -->
@@ -47,11 +101,13 @@
             <!-- About Section with Image and Text -->
             <div class="about-container">
                 <div class="about-image">
-                    <img src="{{ url_for('static', filename='img/peterpicture.png') }}" alt="About Me" />
+                    <img src="{{ url_for('static', filename='img/peterpicture.png') }}" alt="About Me"/>
                 </div>
                 <div class="about-text">
-                    <p class="first-paragraph">I am a Computer Science student at Fulton Schools of Engineering at Arizona State University. A motivated
-                        individual with a solid grasp of object-oriented programming, I am dedicated to ongoing growth within
+                    <p class="first-paragraph">I am a Computer Science student at Fulton Schools of Engineering at
+                        Arizona State University. A motivated
+                        individual with a solid grasp of object-oriented programming, I am dedicated to ongoing growth
+                        within
                         the Software Development Life Cycle. I have a proven ability to lead and contribute to intricate
                         projects, continually advancing my skills through proactive learning and teamwork.</p>
                 </div>
@@ -63,6 +119,146 @@
                 course, I realized how much I enjoyed coding, especially the ability to bring my software ideas to life.
                 This passion led me to pursue a career in computer science, and I’m excited to continue developing my
                 skills and contributing to innovative projects.</p>
+            <br><br>
+
+            <!-- Resume Section Starts Here -->
+
+
+            <div class="section">
+                <h2>Skills</h2>
+                <p><strong>Programming Languages:</strong> Java, Python, C/C++, Scheme, Prolog, Swift, Arduino, SQL,
+                    HTML5, CSS</p>
+                <p><strong>Frameworks:</strong> Flask, SpringBoot, Appium</p>
+            </div>
+
+            <div class="section">
+                <h2>Education</h2>
+                <p><strong>Arizona State University, School of Computing and Augmented Intelligence, Tempe, AZ</strong>
+                    <br>
+                    Bachelor of Science, Computer Science Engineering | Cumulative GPA: 4.00 <br>
+                    <strong>June 2023 – May 2026</strong></p>
+            </div>
+
+            <div class="section">
+                <h2>Academic Projects</h2>
+                <ul class="projects">
+                    <li class="list-item">
+                        <strong>Robot Swarm – Arizona State University, FSE100</strong> <br>
+                        Developed and presented collaborative robot designs in an engineering course using Arduino and
+                        Tinkercad. Led the mechanical design process, creating CAD models, and implemented circuit
+                        designs and code to bring robots to life in Tinkercad simulations. Demonstrated comprehensive
+                        functionality of the robots, showcasing their capabilities and basic interactions within a swarm
+                        environment. Evaluated both individually and as a team, emphasizing collaboration and technical
+                        skills essential as a software engineer.
+                    </li>
+                    <li class="list-item">
+                        <strong>Home Security Gate Controller – Arizona State University, CSE120</strong> <br>
+                        Developed a home security gate controller prototype in a Computer Science Engineering course,
+                        utilizing state diagrams, logic gates, and flip-flops. Designed system behavior for gate
+                        operations and password validation using state definition tables and diagrams. Tested and
+                        simulated the prototype using Digital.jar and GTKWave, gaining hands-on experience in digital
+                        logic design and system modeling.
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Personal Projects</h2>
+                <ul class="projects">
+                    <li class="list-item">
+                        <strong>Automated Bot for Fast Reservations on "TooGoodToGo" App</strong> <br>
+                        <ul>
+                            <li>Developed an automated purchase program for the "TooGoodToGo" app in response to high
+                                demand for deals at a specific sushi restaurant. The program significantly increased the
+                                reservation success rate for my sister-in-law from around 5% to 99%.
+                            </li>
+                            <li>Utilized Python with Selenium and Appium to automate the reservation process, reducing
+                                the time from app launch to the purchase screen to an average of 9 seconds, where the
+                                user only needs to confirm payment via Apple Pay.
+                            </li>
+                            <li>Project URL: <a href="https://github.com/bjkim0426/2Good2Go_Bot" target="_blank">https://github.com/bjkim0426/2Good2Go_Bot</a>
+                            </li>
+                        </ul>
+
+                    </li>
+                    <li class="list-item">
+                        <strong>Apartments Finder Bot</strong> <br>
+                        <ul>
+                            <li>Developed an apartment-finding bot to streamline the process of searching for rental
+                                properties on Zillow, using it extensively during my move from NYC to Seattle. The tool
+                                saved me numerous hours and helped securing a two-bedroom apartment in Redmond for
+                                $2,200 per month.
+                            </li>
+                            <li>Utilized Python with Selenium, BeautifulSoup, and Requests to automate scraping rental
+                                data, dynamically adjust search criteria, and submit results to a Google Form for easy
+                                organization and tracking.
+                            </li>
+                            <li>Project URL: <a href="https://github.com/bjkim0426/apartment_finding_bot"
+                                                target="_blank">https://github.com/bjkim0426/apartment_finding_bot</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-item">
+                        <strong>Blog Website for Showcasing My Software Engineering Journey</strong> <br>
+                        <ul>
+                            <li>Created a personal blog to showcase my software engineering journey and highlight
+                                various projects I have worked on.
+                            </li>
+                            <li>Developed using Flask for backend functionality, with HTML, CSS, and Bootstrap for
+                                responsive frontend design.
+                            </li>
+                            <li>Integrated SQLAlchemy to manage blog posts, user data, and comments, enabling dynamic
+                                content creation and engagement.
+                            </li>
+                            <li>Implemented user authentication with Flask-Login to allow visitors to sign up, log in,
+                                and manage their profiles.
+                            </li>
+                            <li>Project URL: <a href="https://github.com/bjkim0426/peter-blog" target="_blank">https://github.com/bjkim0426/peter-blog</a>
+                            </li>
+                        </ul>
+
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Work Experience</h2>
+                <ul class="work-experience">
+                    <li class="list-item">
+                        <strong>Teaching Assistant – Ira A. Fulton Schools of Engineering</strong> <br>
+                        Supported EEE120 students with complex engineering concepts, resulting in improved comprehension and engagement by holding an average of 2 hours of office hours per week via Zoom, assisting an average of 4 students per session, leading recitation sessions, and clarifying course material.
+                    </li>
+                    <li class="list-item">
+                        <strong>Barista – Starbucks, Brooklyn, NY</strong> <br>
+                        Delivering excellent customer service and withholding the company’s missions and values. Responsibilities encompasses collaborating with team members to ensure efficient store operations, precision in crafting beverages, accurate order-taking, and providing personalized product recommendations.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Certifications</h2>
+                <ul class="certifications">
+                    <li class="list-item">
+                        <strong>Dean’s List: Term GPA: 4.33/4.00</strong>, Arizona State University, Spring 2024
+                    </li>
+                    <li class="list-item">
+                        <strong>Dean’s List: Term GPA: 4.04/4.00</strong>, Arizona State University, Fall 2023
+                    </li>
+                    <li class="list-item">
+                        <strong>The Complete Java Development Bootcamp</strong>, Udemy, April 2023
+                    </li>
+                    <li class="list-item">
+                        <strong>100 Days of Code: The Complete Python Pro Bootcamp</strong>, Udemy, March 2023
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>Languages</h2>
+                <p><strong>English:</strong> Bilingual proficiency <br>
+                    <strong>Korean:</strong> Bilingual proficiency</p>
+            </div>
 
         </div>
     </div>
